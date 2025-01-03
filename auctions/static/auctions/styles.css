@@ -1,0 +1,179 @@
+
+body {
+    padding: 10px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination span {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.title{
+    color: green;
+}
+
+.auction-list{
+    display: flex; 
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+.auction-detail{
+    flex-grow: 1;
+    display: flex; 
+    /* flex-wrap: nowrap;*/
+    margin: 10px 30px 20px; 
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    /* font-family: sans-serif; */
+    
+}
+
+.auction-image{
+    display: flex;
+    width: 300px;
+    height: 220px;
+    background-color: whitesmoke;
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; /* Ensures the image does not overflow */  
+    border-radius: 10px;
+}
+
+.listing-image{
+    display: flex;
+    width: 600px; 
+    height: 400px;
+    background-color: whitesmoke;
+    /* object-fit: center;  */
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+
+.auction-image img{
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: contain; 
+}
+
+.listing-image img{ 
+    /* width: 383px; 
+    height: 383px;  */
+    max-height: 100%;
+    max-width: 100%; /* Ensure image fits its container */
+    object-fit: center; /* Crop the image to fill the container */
+    border-radius: 5px;
+}
+.listing{
+    flex-wrap: 1;
+    max-width: calc(100% - 600px);
+    padding-left: 20px;
+}
+.listing-title{
+    font-family: sans-serif;
+    color: green;
+}
+.listing-des{
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+.listing-details {
+    font-family: Arial, sans-serif; 
+    font-size: 12px; 
+    line-height: 1.2; 
+    margin: 5px 0; 
+}
+
+.listing-details p {
+    margin: 2px 0; 
+}
+
+
+.comment-date{
+    font-size: 12px;
+}
+
+.form-botton{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.custom-btn {
+    font-size: 12px; /* Makes the button smaller */
+    border-radius: 12px; /* Adds rounded corners */
+    padding: 3px 2px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow for depth */
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+.listing-comment:after {
+    content: "";
+    display: flex;
+    clear: both;
+
+}
+
+.commenter {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    height: 80px;
+    font-size: 12px; 
+    font-family: sans-serif; 
+    color: #007bff;
+}
+
+.comment-date{
+    font-size: 10px;
+    color: #888;
+}
+.comment-text {  
+    font-size: 12px; 
+    font-family: sans-serif;
+    float: left;
+    width: 85%;
+    padding: 10px;
+    height: 80px;
+    line-height: 1.5;
+    overflow-y: auto;
+    margin-bottom: 10px;      
+}
+
+.auction-des{
+    font-size: small;
+}
+
+.auction-date{
+    color: gray;
+    font-size: smaller;
+}
+

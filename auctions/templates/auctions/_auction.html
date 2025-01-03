@@ -1,0 +1,38 @@
+{% if not auctions %}
+    <p>The list is empty.</p>
+{% endif %}
+{% for auction in auctions %}
+<div class="auction-list">
+    {% if auction.image_url %}
+        <div class="auction-image">
+            <img src="{{ auction.image_url }}" alt="{{ auction.title }}">
+        </div>
+    {% else %}
+        <div class="auction-image">
+            <img src="https://m.media-amazon.com/images/I/314ZO9f6vbL.jpg" alt="No Image">
+        </div>
+    {% endif %}
+    <div class="auction-detail">
+        <p><a href="{% url 'listing' auction.id %}"><strong>{{ auction.title }}</strong></a></p>
+        {% if auction.current_price %}
+            <p>$ <strong>{{ auction.current_price }}</strong></p>
+        {% else %}
+            <p>$ <strong>{{ auction.starting_bid }}</strong></p>
+        {% endif %}
+        <div class="auction-delivery">
+            {% if auction.delivery_fee > 0 %}
+                <p>Shipping: $ {{ auction.delivery_fee }} delivery </p>
+            {% else %}
+                <p>Shipping: Free delivery</p>
+            {% endif %}
+        </div>
+        <div class="auction-date">
+            {% if auction.is_active %}
+                <p>Created {{ auction.created_at|date:"M d, Y" }}</p>
+            {% elif not auction.is_active %}
+                <p>Closed on {{ auction.closed_at|date:"M d, Y" }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
